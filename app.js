@@ -17,12 +17,14 @@ app.set('view engine', 'ejs')
 
 // menggunakan express-ejs-layouts
 app.use(expressLayouts)
+// set custom layout to other file location/name
 app.set('layout', './layout/mainLayout')
 
 // "{root: __dirname}" client akan ngebaca berdasarkan lokasi file pada server
 app.get('/', (req, res) => {
     res.render('index', {
         pageName: 'Home'
+        // just add layout for spesific single render (e.g layout: 'layoutlocation')
     });
 })
 
